@@ -76,7 +76,8 @@ public class AuthService {
         String token = tokenProvider.generateToken(authentication);
 
         User user = userRepository.findByUsername(request.getUsername())
-            .orElseThrow();
+            .orElseGet(() -> userRepository.findByEmail(request.getUsername())
+                .orElseThrow(() -> new IllegalStateException("User not found: " + request.getUsername())));
 
         return buildAuthResponse(token, user, user.getRoles());
     }

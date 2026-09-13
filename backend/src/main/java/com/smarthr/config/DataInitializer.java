@@ -28,8 +28,8 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) {
-        if (roleRepository.count() > 0) {
-            log.info("Sample data already present – skipping initialization.");
+        if (userRepository.existsByUsername("admin")) {
+            log.info("Sample admin user already present – skipping initialization.");
             return;
         }
         log.info("Initializing sample data for SmartHR...");

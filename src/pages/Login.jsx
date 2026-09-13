@@ -46,8 +46,12 @@ function Login() {
             await loginUser(form);
             navigate(from, { replace: true });
         } catch (err) {
-            const msg = err?.response?.data?.message || "Invalid username or password";
-            setApiError(msg);
+            if (!err?.response) {
+                setApiError("Unable to connect to backend server. Check if VITE_API_URL environment variable is set in live deployment or if backend is spinning up.");
+            } else {
+                const msg = err.response?.data?.message || "Invalid username or password";
+                setApiError(msg);
+            }
         } finally {
             setLoading(false);
         }
