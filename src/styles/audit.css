@@ -1,0 +1,143 @@
+/* ─────────────────────────────────────
+   Audit Log Page Styles
+───────────────────────────────────── */
+
+.audit-page {}
+
+.audit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.audit-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.audit-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.audit-count-badge {
+    padding: 6px 14px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Table card */
+.audit-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.audit-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.audit-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(241,245,249,0.6);
+    border-bottom: 1px solid var(--border);
+}
+
+.audit-table td {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--text-primary);
+    border-bottom: 1px solid rgba(226,232,240,0.6);
+}
+
+.audit-table tr:last-child td {
+    border-bottom: none;
+}
+
+.audit-table tr:hover td {
+    background: rgba(241,245,249,0.5);
+}
+
+/* Action badge */
+.audit-action-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.audit-action-created {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.audit-action-updated {
+    background: var(--info-light);
+    color: var(--info);
+}
+
+.audit-action-deleted {
+    background: var(--danger-light);
+    color: var(--danger);
+}
+
+/* Performer */
+.audit-performer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.audit-performer-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* Timestamp */
+.audit-timestamp {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Empty / loading */
+.audit-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+}
+
+.audit-empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
